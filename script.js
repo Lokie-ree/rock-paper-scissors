@@ -1,8 +1,8 @@
-// Step 1: Create variables to keep track of Human/Computer scores
+// Keeps track of player and computer scores
 let playerScore = 0;
 let computerScore = 0;
 
-// Function that returns one of the following choices: rock, paper, scissors 
+// Returns one of the following choices at random
 const getComputerChoice = () => {
     const randomNumber = Math.floor(Math.random() * 3) + 1;
         let computerChoice;
@@ -17,13 +17,13 @@ const getComputerChoice = () => {
     return computerChoice;
 };
 
-// Function that returns one of the valid choices based on user input
+// Returns one of the valid choices based on user input
 const getPlayerChoice = () => {
       let playerChoice = window.prompt("Which will you choose: rock, paper, or scissors?").toLowerCase();
       return playerChoice;
 };
 
-// Function that determines the round winner, increments score, and displays the winning message
+// Determines the round winner, increments score, and displays the winning message
 const playRound = (playerChoice, computerChoice) => {
     const roundTie = playerChoice === computerChoice;
     const playerWin = (playerChoice === "rock" && computerChoice === "scissors") ||
@@ -31,16 +31,23 @@ const playRound = (playerChoice, computerChoice) => {
                       (playerChoice === "scissors" && computerChoice === "paper");
     
     if (roundTie) {
-      console.log("It's a tie. Both of you chose " + computerChoice + "." );
+      console.log("It's a tie. Both of you chose " + computerChoice.toUpperCase() + "." );
     } else if (playerWin) {
       playerScore += 1;
-      console.log("You won! " + playerChoice + " beats " + computerChoice + "!");
+      console.log("You won! " + playerChoice.toUpperCase() + " beats " + computerChoice.toUpperCase() + "!");
     } else {
       computerScore += 1;
-      console.log("You lose! " + computerChoice + " beats " + playerChoice + "!");
+      console.log("You lose! " + computerChoice.toUpperCase() + " beats " + playerChoice.toUpperCase() + "!");
     }
+    displayScore(playerScore, computerScore);
 }
 
+// Displays the score at the end of each round
+const displayScore = (playerScore, computerScore) => {
+  console.log("The current score is Player: " + playerScore + " and Computer: " + computerScore + ".");
+}
+
+// 
 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();

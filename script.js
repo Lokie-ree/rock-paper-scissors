@@ -25,7 +25,7 @@ const getPlayerChoice = () => {
 };
 
 // Determines the round winner, increments score, and displays the winning message
-const playRound = (playerChoice, computerChoice) => {
+const playRound = (playerChoice, computerChoice, playerScore, computerScore) => {
     const roundTie = playerChoice === computerChoice;
     const playerWin = (playerChoice === "rock" && computerChoice === "scissors") ||
                       (playerChoice === "paper" && computerChoice === "rock") ||
@@ -35,22 +35,38 @@ const playRound = (playerChoice, computerChoice) => {
         console.log(`It's a tie. You both chose: ${computerChoice.toUpperCase()}` );
     } else if (playerWin) {
         playerScore += 1;
-        console.log(`You won! ${playerChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}.`);
+        console.log(`You win. ${playerChoice.toUpperCase()} beats ${computerChoice.toUpperCase()}!`);
     } else {
         computerScore += 1;
-        console.log("You lose! " + computerChoice.toUpperCase() + " beats " + playerChoice.toUpperCase() + "!");
+        console.log(`You lose. ${computerChoice.toUpperCase()} beat ${playerChoice.toUpperCase()}!`);
   }
-  
-}
-
-// Displays the score at the end of each round
-const displayScore = (playerScore, computerScore) => {
-    console.log("The current score is Player: " + playerScore + " and Computer: " + computerScore + ".");
+    return [playerScore, computerScore];
 }
 
 // Plays 5 rounds of the game, keeps track of the scores, and declares a winner
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
 
-playRound(playerSelection, computerSelection);
+const playGame = () => {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  for (let round = 1; round < 6; round ++) {
+    let playerSelection = getPlayerChoice();
+    let computerSelection = getComputerChoice();
+    [playerScore, computerScore] = playRound(playerSelection, computerSelection, playerScore, computerScore);
+    
+    console.log(`The score at the end of Round ${round} is Player (${playerScore}) Computer (${computerScore}).`);
+  }
+
+  if (playerScore > computerScore) {
+    console.log(`You won the match by a score of ${playerScore}-${computerScore}!`);
+  } else if (playerScore < computerScore) {
+    console.log(`You lost the match by a score of ${computerScore}-${playerScore}!`);
+  } else {
+    console.log(`The match ended in a ${computerScore}-${computerScore} tie!`);
+  }
+  
+}
+
+playGame()
+

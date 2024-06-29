@@ -1,22 +1,4 @@
-// Keeps track of player and computer scores
-let playerScore = 0;
-let computerScore = 0;
 
-
-// Returns one of the following choices at random
-const getComputerChoice = () => {
-    const randomNumber = Math.floor(Math.random() * 3) + 1;
-        let computerChoice;
-
-        if (randomNumber === 1) {
-            computerChoice = "rock";
-        } else if (randomNumber === 2) {
-            computerChoice = "paper";
-        } else {
-            computerChoice = "scissors";
-        }
-    return computerChoice;
-};
 
 // Returns one of the valid choices based on user input
 const getPlayerChoice = () => {

@@ -1,8 +1,34 @@
+// References stored for all buttons
 const playBtn = document.getElementById("playBtn");
 const rockBtn = document.getElementById("rockBtn");
 const paperBtn = document.getElementById("paperBtn");
 const scissorsBtn = document.getElementById("scissorsBtn");
 const playAgainBtn = document.getElementById("playAgainBtn");
+
+// Generates a random number and intializes scores
+const randomNumber = Math.floor(Math.random() * 3);
+let playerScore;
+let computerScore;
+
+// Returns one of the following computer choices at random
+const getComputerChoice = (randomNumber) => {
+  
+  let computerChoice;
+
+  switch (randomNumber) {
+    case 0:
+      computerChoice = "rock";
+      break;
+    case 1:
+      computerChoice = "paper";
+      break;
+    case 2:
+      computerChoice = "scissors";
+      break;
+  }
+  
+  return computerChoice;
+};
 
 playBtn.addEventListener("mousedown", () => {
   console.log("Play Button Selected!");

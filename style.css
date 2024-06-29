@@ -1,15 +1,21 @@
 body {
+  margin: 10px;
   text-align: center;
+  border: 2px solid blue;
+  border-radius: 10px;
 }
 
 .top.container {
-  padding: 20px;
+  padding: 10px;
+  border-bottom: 2px dotted blue;
 }
 
 .choice.container {
+  padding: 10px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .rps.btn {
@@ -18,4 +24,9 @@ body {
   width: 50px;
   height: 50px;
   font-weight: bold;
+}
+
+.result.container {
+  border: 2px dotted red; 
+  padding: 10px;
 }

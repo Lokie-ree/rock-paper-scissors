@@ -12,8 +12,24 @@
 <body>
   <header>
     <h1>Rock-Paper-Scissors</h1>
-    <h2>Click the controller to begin!!!</h2>
+    <details>
+      <summary>Game Instructions</summary>
+        <h4>Rules</h4>
+        <ul class="one">
+          <li>🪨 beats ✂️</li>
+          <li>✂️ beats 🪨</li>
+          <li>📄 beats 🪨</li>
+        </ul>
+        <h4>Play Game!</h4>
+        <ul class="two">
+          <li>Press 🎮 to Begin!</li>
+          <li>First to 5 wins!</li>
+          <li>Have fun!</li>
+        </ul>
+    </details>
+    
     <button class="playBtn">🎮</button>
+
   </header>
   <div class="choice container">
     <button class="choiceBtns">🪨</button>
@@ -23,6 +39,7 @@
   <div class="results container">
     <h2 id="playerText"></h2>
     <h2 id="computerText"></h2>
+    <p id="message"></p>
   </div>
   <script src="/script.js"></script>
 </body>

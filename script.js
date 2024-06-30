@@ -1,51 +1,41 @@
 // References stored for all buttons
-const playBtn = document.getElementById("playBtn");
-const rockBtn = document.getElementById("rockBtn");
-const paperBtn = document.getElementById("paperBtn");
-const scissorsBtn = document.getElementById("scissorsBtn");
-const playAgainBtn = document.getElementById("playAgainBtn");
+const playerText = document.getElementById("playerText");
+const computerText = document.getElementById("computerText");
+const results = document.getElementById("results");
+const choiceBtns = document.querySelectorAll(".choiceBtns");
 
-// Generates a random number and intializes scores
-const randomNumber = Math.floor(Math.random() * 3);
+// 
+let playerChoice;
 let playerScore;
+let computerChoice;
 let computerScore;
 
-// Returns one of the following computer choices at random
-const getComputerChoice = (randomNumber) => {
-  
-  let computerChoice;
+choiceBtns.forEach(button => {
+  button.addEventListener("click", () => {
+    playerChoice = button.textContent;
+    playerText.textContent = playerChoice;
+    computerChoice = getComputerChoice();
+    computerText.textContent = computerChoice;
+    console.log(computerChoice);
+  });
+});
 
+// Returns one of the following computer choices at random
+const getComputerChoice = () => {
+  let randomNumber = Math.floor(Math.random() * 3);
+  
   switch (randomNumber) {
     case 0:
-      computerChoice = "rock";
+      computerChoice = "🪨";
       break;
     case 1:
-      computerChoice = "paper";
+      computerChoice = "📄";
       break;
     case 2:
-      computerChoice = "scissors";
+      computerChoice = "✂️";
       break;
   }
-  
-  return computerChoice;
+return computerChoice;
 };
 
-playBtn.addEventListener("mousedown", () => {
-  console.log("Play Button Selected!");
-});
 
-rockBtn.addEventListener("mousedown", () => {
-  console.log("Rock Button Selected!");
-});
-
-paperBtn.addEventListener("mousedown", () => {
-  console.log("Paper Button Selected!");
-});
-
-scissorsBtn.addEventListener("mousedown", () => {
-  console.log("Scissors Button Selected!");
-});
-
-playAgainBtn.addEventListener("mousedown", () => {
-  console.log("Play Again Button Selected!");
-});

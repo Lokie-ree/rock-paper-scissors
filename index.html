@@ -10,18 +10,22 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div class="top container">
+  <header>
     <h1>Rock-Paper-Scissors</h1>
-    <p>Welcome to your next challenge!  Here are the rules: </p>
-    <button id="playBtn">Play🎮</button>
+    <p>Click the controller to begin!!!</p>
+  </header>
+  <div class="top container">
+    
+    <button class="playBtn">🎮</button>
   </div >
   <div class="choice container">
-    <button id="rockBtn" class="rps btn">Rock<br>🪨</button>
-    <button id="paperBtn" class="rps btn">Paper<br>📄</button>
-    <button id="scissorsBtn" class="rps btn">Scissors<br>✂️</button>
+    <button class="choiceBtns">🪨</button>
+    <button class="choiceBtns">📄</button>
+    <button class="choiceBtns">✂️</button>
   </div>
-  <div class="result container">Results Container<br>
-    <button id="playAgainBtn">Play Again?</button>
+  <div class="results container">
+    <div id="playerText">Player's Text Goes Here</div>
+    <div id="computerText">Computer's Text Goes Here</div>
   </div>
   <script src="/script.js"></script>
 </body>

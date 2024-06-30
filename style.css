@@ -1,32 +1,51 @@
-body {
-  margin: 10px;
-  text-align: center;
-  border: 2px solid blue;
-  border-radius: 10px;
+* {
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  margin: 20px;
+  text-align: center;
+  border-radius: 10px;
+  background-color:white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+header {
+    padding: 20px;
+    color:rgba(235, 227, 227, 0.962);
+    background-color: rgb(78, 100, 162);
+  }
+
 .top.container {
-  padding: 10px;
-  border-bottom: 2px dotted blue;
+  padding: 20px;
+  margin-bottom: 20px;
+  color:rgba(235, 227, 227, 0.962);
+  background-color: rgb(78, 82, 79);
+  flex-direction: column;
+  align-items: center;
 }
 
 .choice.container {
-  padding: 10px;
-  display: flex;
+  padding: 20px;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  background-color: rgb(196, 93, 93)
 }
 
-.rps.btn {
-  font-size: 0.6rem;
+.results.container {
+  padding: 20px;
+  color:rgba(235, 227, 227, 0.962);
+  background-color: rgb(69, 181, 67);
+}
+
+.choiceBtns, .playBtn {
+  font-size: 24px;
   border-radius: 8px;
   width: 50px;
   height: 50px;
   font-weight: bold;
-}
-
-.result.container {
-  border: 2px dotted red; 
-  padding: 10px;
+  background-color:rgb(141, 146, 146);
 }

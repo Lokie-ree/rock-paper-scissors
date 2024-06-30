@@ -4,34 +4,42 @@
 }
 
 body {
-  margin: 20px;
   text-align: center;
   border-radius: 10px;
   background-color:white;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  justify-content: center;
+  width: 100vw;
+}
+
+h1 {
+  margin-bottom: 5px;
 }
 
 header {
     padding: 20px;
     color:rgba(235, 227, 227, 0.962);
     background-color: rgb(78, 100, 162);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px
   }
 
-.top.container {
+.play.container {
   padding: 20px;
-  margin-bottom: 20px;
-  color:rgba(235, 227, 227, 0.962);
-  background-color: rgb(78, 82, 79);
+  background-color: rgb(139, 51, 152);
   flex-direction: column;
   align-items: center;
 }
 
 .choice.container {
   padding: 20px;
+  display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
   background-color: rgb(196, 93, 93)
 }
 
@@ -39,10 +47,13 @@ header {
   padding: 20px;
   color:rgba(235, 227, 227, 0.962);
   background-color: rgb(69, 181, 67);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .choiceBtns, .playBtn {
-  font-size: 24px;
+  font-size: 32px;
   border-radius: 8px;
   width: 50px;
   height: 50px;
